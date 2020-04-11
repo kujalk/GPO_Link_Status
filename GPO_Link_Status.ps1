@@ -37,10 +37,9 @@ function CheckGPOLinkStatus {
 	[xml]$report=Get-GPOReport -Name $GPOPolicy -ReportType xml
 
     $status=($report.GPO.LinksTo | Where-Object {$_.SOMPath -eq $CanonicalName}).Enabled
-	Write-Host "GPOLink Status is $status"
+    Write-Host "GPOLink Status is $status"
     Write-Host ""
-
-       
+    
     }
 }
 
